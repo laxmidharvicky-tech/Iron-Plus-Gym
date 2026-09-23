@@ -1,93 +1,134 @@
 import React from "react";
 
+const services = [
+  {
+    number: "01",
+    title: "Strength Training",
+    description:
+      "Build serious strength and muscle with structured workouts, progressive training and modern equipment.",
+    tag: "STRENGTH",
+  },
+  {
+    number: "02",
+    title: "HIIT & Cardio",
+    description:
+      "Improve endurance, stamina and conditioning with high-intensity workouts designed to keep you moving.",
+    tag: "CONDITIONING",
+  },
+  {
+    number: "03",
+    title: "Personal Training",
+    description:
+      "Train with focused guidance and a program designed around your goals, fitness level and progress.",
+    tag: "COACHING",
+  },
+  {
+    number: "04",
+    title: "Nutrition Coaching",
+    description:
+      "Build sustainable eating habits and learn how nutrition can support your training and fitness goals.",
+    tag: "NUTRITION",
+  },
+  {
+    number: "05",
+    title: "Boxing & Combat",
+    description:
+      "Develop coordination, conditioning and confidence through boxing-inspired fitness and combat training.",
+    tag: "COMBAT",
+  },
+  {
+    number: "06",
+    title: "Fat Loss",
+    description:
+      "Combine strength, cardio and structured training to build healthier habits and improve body composition.",
+    tag: "TRANSFORMATION",
+  },
+];
+
 function Services() {
   return (
-    <section id="Services" className="py-16 sm:py-20 md:py-24 bg-slate-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 sm:mb-12 md:mb-14">
-          <p className="text-red-500 font-bold uppercase tracking-widest text-sm sm:text-base mb-3">
-            What We Offer
-          </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black">
-            Our Services
+    <section
+      id="Services"
+      className="relative overflow-hidden bg-slate-950 py-20 sm:py-24 md:py-28"
+    >
+      <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-red-600/10 blur-3xl"></div>
+      <div className="absolute -bottom-40 -left-40 h-80 w-80 rounded-full bg-red-600/5 blur-3xl"></div>
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-12 max-w-3xl sm:mb-16">
+          <div className="mb-5 flex items-center gap-3">
+            <span className="h-px w-10 bg-red-500"></span>
+
+            <p className="text-sm font-bold uppercase tracking-[0.25em] text-red-500">
+              What We Offer
+            </p>
+          </div>
+          <h2 className="max-w-2xl text-4xl font-black uppercase leading-[0.95] tracking-tight text-white sm:text-5xl md:text-6xl">
+            Train With
+            <span className="block text-red-500">Purpose.</span>
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto mt-4">
-            Professional fitness services designed to help you become stronger,
-            healthier and more confident.
+          <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">
+            From strength and conditioning to personal coaching, our programs
+            are designed to help you train harder, move better and achieve
+            measurable results.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          <div className="group bg-slate-900 border border-slate-800 p5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl hover:border-red-500 hover:-translate-y-1 transition-all duration-300">
-            <div className="text-red-500 text-3xl sm:text-4xl mb-4 sm:mb-5">
-              🏋️
+        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-slate-800 bg-slate-800 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => (
+            <div
+              key={service.number}
+              className="group relative bg-slate-950 p-6 transition-all duration-500 hover:bg-slate-900 sm:p-8"
+            >
+              <div className="mb-12 flex items-start justify-between">
+                <span className="text-sm font-bold tracking-widest text-slate-600 transition-colors duration-300 group-hover:text-red-500">
+                  {service.number}
+                </span>
+
+                <span className="text-[10px] font-bold tracking-[0.2em] text-slate-600">
+                  {service.tag}
+                </span>
+              </div>
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-slate-700 transition-all duration-300 group-hover:border-red-500 group-hover:bg-red-500">
+                <span className="text-lg font-bold text-red-500 transition-colors duration-300 group-hover:text-white">
+                  +
+                </span>
+              </div>
+              <h3 className="mb-4 text-2xl font-black uppercase tracking-tight text-white">
+                {service.title}
+              </h3>
+              <p className="min-h-[84px] text-sm leading-7 text-slate-400">
+                {service.description}
+              </p>
+              <div className="mt-7 flex items-center gap-3 text-sm font-bold uppercase tracking-wider text-white">
+                <span className="transition-transform duration-300 group-hover:translate-x-2">
+                  Learn More
+                </span>
+
+                <span className="text-red-500">→</span>
+              </div>
+              <div className="absolute bottom-0 left-0 h-0.5 w-0 bg-red-500 transition-all duration-500 group-hover:w-full"></div>
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">
-              Weight Training
-            </h3>
-            <p className="text-slate-400 text-sm sm:text-base leading-6 sm:leading-7">
-              Build muscle, increase strength and improve your overall fitness
-              with structured weight training.
+          ))}
+        </div>
+        <div className="mt-8 flex flex-col items-start justify-between gap-6 rounded-2xl border border-slate-800 bg-slate-900/50 p-6 sm:flex-row sm:items-center sm:p-8">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-red-500">
+              Ready to start?
             </p>
-          </div>
-          <div className="group bg-slate-900 border border-slate-800 p5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl hover:border-red-500 hover:-translate-y-1 transition-all duration-300">
-            <div className="text-red-500 text-3xl sm:text-4xl mb-4 sm:mb-5">
-              ❤️
-            </div>
-            <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">
-              Cardio
+
+            <h3 className="mt-2 text-2xl font-black uppercase text-white sm:text-3xl">
+              Your goals. Your grind.
             </h3>
-            <p className="text-slate-400 text-sm sm:text-base leading-6 sm:leading-7">
-              Improve stamina and cardiovascular fitness with effective cardio
-              workouts.
-            </p>
           </div>
-          <div className="group bg-slate-900 border border-slate-800 p5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl hover:border-red-500 hover:-translate-y-1 transition-all duration-300">
-            <div className="text-red-500 text-3xl sm:text-4xl mb-4 sm:mb-5">
-              🧘
-            </div>
-            <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">
-              Personal Training
-            </h3>
-            <p className="text-slate-400 text-sm sm:text-base leading-6 sm:leading-7">
-              Get personal guidance from experienced trainers and follow a
-              structured fitness plan.
-            </p>
-          </div>
-          <div className="group bg-slate-900 border border-slate-800 p5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl hover:border-red-500 hover:-translate-y-1 transition-all duration-300">
-            <div className="text-red-500 text-3xl sm:text-4xl mb-4 sm:mb-5">
-              🥗
-            </div>
-            <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">
-              Nutrition
-            </h3>
-            <p className="text-slate-400 text-sm sm:text-base leading-6 sm:leading-7">
-              Learn healthy eating habits that support your fitness journey.
-            </p>
-          </div>
-          <div className="group bg-slate-900 border border-slate-800 p5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl hover:border-red-500 hover:-translate-y-1 transition-all duration-300">
-            <div className="text-red-500 text-3xl sm:text-4xl mb-4 sm:mb-5">
-              🥊
-            </div>
-            <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">
-              Boxing
-            </h3>
-            <p className="text-slate-400 text-sm sm:text-base leading-6 sm:leading-7">
-              Improve fitness, coordination and endurance through boxing
-              workouts.
-            </p>
-          </div>
-          <div className="group bg-slate-900 border border-slate-800 p5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl hover:border-red-500 hover:-translate-y-1 transition-all duration-300">
-            <div className="text-red-500 text-3xl sm:text-4xl mb-4 sm:mb-5">
-              🔥
-            </div>
-            <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3">
-              Fat Loss
-            </h3>
-            <p className="text-slate-400 text-sm sm:text-base leading-6 sm:leading-7">
-              Follow structured workouts designed to help you improve fitness
-              and body composition.
-            </p>
-          </div>
+
+          <a
+            href="#contact"
+            className="group flex w-full items-center justify-center gap-3 rounded-lg bg-red-600 px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-red-700 sm:w-auto"
+          >
+            Start Training
+            <span className="transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </span>
+          </a>
         </div>
       </div>
     </section>
