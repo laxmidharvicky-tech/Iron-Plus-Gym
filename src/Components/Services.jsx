@@ -178,7 +178,7 @@ function Services() {
           }}
         >
 
-          {/* CTA glow */}
+         
           <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-red-500/5 blur-3xl transition-all duration-700 group-hover:bg-red-500/10" />
 
           <div className="relative flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
@@ -206,7 +206,6 @@ function Services() {
               href="#contact"
               className="group/button relative flex w-full items-center justify-center gap-3 overflow-hidden rounded-lg bg-red-600 px-7 py-4 text-sm font-bold uppercase tracking-wider text-white transition-all duration-300 hover:-translate-y-1 hover:bg-red-500 hover:shadow-[0_10px_30px_rgba(239,68,68,0.25)] sm:w-auto"
             >
-              {/* button shine */}
               <span className="absolute inset-0 -translate-x-full bg-white/10 transition-transform duration-700 group-hover/button:translate-x-full" />
 
               <span className="relative">
